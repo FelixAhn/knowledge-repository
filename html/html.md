@@ -41,7 +41,6 @@ Htper Text Markup Language
  - HTML : html로 작성됐음을 브라우저에게 알림
  - Head : 메티데이터(페이지 인코딩 방식, 검색엔진에 관한 정보)와 타이틀
  - Body : 화면에 보이는 것들이 들어감, Only One
- - 
 ```
 
 ### HTML 기본 태그와 역할
