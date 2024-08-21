@@ -77,3 +77,34 @@ git branch -d branchName
 git merge branchName [main branch에서 사용]
 git rebase main [main branch가 아닌 곳에서 사용]
 ```
+
+
+## 커밋 가져온 후 자동 병합 시도
+```
+git pull
+```
+
+## 현재 브랜치에 존재하지 않는 대상 branch에서 커밋 수집 후 로컬에 저장
+```
+git fetch
+```
+
+## 충돌 처리
+```
+* 변경 사항 비교 후 선택하여 병합
+git config pull.rebase false
+
+* 해당 커밋이후 모두 삭제
+git reset --hard (commit hash)
+
+* 해당 커밋만 삭제
+git revert (commit hash)
+```
+
+## 작업 임시 저장
+```
+git stash (저장)
+git stash list (저장 목록 보기)
+git stash pop (불러오기)
+git stash clear (저장 목록 전부 삭제)
+```
