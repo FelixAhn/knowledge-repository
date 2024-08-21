@@ -33,7 +33,6 @@ Htper Text Markup Language
  - time
  - aside
  - address
- - 
 ```
 
 ### HTML 기본 구조
