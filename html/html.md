@@ -33,7 +33,6 @@ Htper Text Markup Language
  - time
  - aside
  - address
- - 
 ```
 
 ### HTML 기본 구조
@@ -42,7 +41,6 @@ Htper Text Markup Language
  - HTML : html로 작성됐음을 브라우저에게 알림
  - Head : 메티데이터(페이지 인코딩 방식, 검색엔진에 관한 정보)와 타이틀
  - Body : 화면에 보이는 것들이 들어감, Only One
- - 
 ```
 
 ### HTML 기본 태그와 역할
@@ -50,7 +48,7 @@ Htper Text Markup Language
  - Heading : 제목 사용
  - p : 문단 정의
  - pre : 미리 정의된 형식의 텍스트를 정의할 때 사용
- - ol : 순서가 있는 목록 (1,2,3... , a,b,c, ...)
+ - ol : 순서가 있는 목록 (1,2,3... , a,b,c...)
  - ul : 순서가 없는 목록 (*)
  - dl : 설명 목록 (-)
  - br : 줄바꿈
