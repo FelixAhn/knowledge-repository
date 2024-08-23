@@ -76,3 +76,64 @@
  - clear : float의 영향을 받지 않도록 할 수 있음
 ```
 
+### CSS Box Model
+```
+ - content : 텍스트와 이미지가 나타나는 상자 내용
+ - padding : 콘텐츠 주변 영역을 지움
+ - border : 패딩과 콘텐츠를 둘러싸는 테두리
+ - margin : 테두리 밖의 영역 
+```
+
+### CSS 이미지 object-fit 종류
+```
+ - fill : 기본값, 주어진 치수 채우도록 조정, [늘어나거나 찌끄러짐]
+ - contain : 이미지 종횡비 유지, 주어진 치수에 맞게 크기 조정
+ - cover : 이미지 종횡비 유지, 주어진 치수 채움, [이미지 잘림]
+ - none : 이미지 크기 조정 x
+ - scale-down : 이미지가 none or 포함의 가장 작은 버전으로 축소
+```
+
+### CSS Transform
+```
+ - transition : 시간을 흐름의 주는 속성
+ - animation : 하나의 줄거리를 구성하여 줄거리 내에서 세부 움직임을 시간흐름 단위로
+               제어하여 요소의 움직임을 표현
+ - transform : 회전, 크기 조절, 기울이기, 이동 효과 부여
+```
+
+### CSS background-clip
+```
+ - boredr-box : 테두리 영역과 그 안쪽 영역을 채움
+ - padding-box : 안쪽 여백 영역과 그 안쪽 영역을 채움
+ - content-box : 내용영역과 그 안쪽 영역을 채움
+ - initial : 기본값 설정
+ - inherit : 부모 요소의 속성 값을 상속받음
+```
+
+### CSS Flexbox
+```
+ - 요소를 효율적이고 동적으로 배열할 수 있는 레이아웃 모델
+
+ * Flex Container : Flexbox의 이 구성 요소는 표시를 flex or inline-flex로 
+                    설정하여 상위 요소의 속성을 정의
+ * Flex Items : Flex Container의 직계자식
+```
+
+### CSS Flexbox Properties
+```
+ - Flex Container Properties 종류
+    * flex-direction
+    * flex-wrap
+    * flex-flow
+    * justify-content
+    * align-items
+    * align-content
+
+ - Flex Items Properties 종류
+    * order
+    * flex-grow
+    * flex-shrink
+    * flex-basis
+    * align-self
+    * flex : flex-grow, flex-shrink, flex-basis가 결합된 약어
+```
