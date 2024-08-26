@@ -8,5 +8,7 @@
     -   [CSS 기본](/css/css.md)
 -   network
     -   [NETWORK 기본](/network/network.md)
+-   algorithm
+    -   [알고리즘 기본](/algorithm/algorithm.md)
 -   etc
     -   [etc](/etc./etc.md)
