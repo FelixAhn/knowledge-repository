@@ -196,39 +196,50 @@
 
 ### CSS 적용 우선 순위
 ```
-   1. !important를 붙인 속성
-   2. HTML에서 style을 직접 지정한 속성
-   3. #id로 지정한 속성
-   4. 클래스, 가상클래스로 지정한 속성
+ 1. !important를 붙인 속성
+ 2. HTML에서 style을 직접 지정한 속성
+ 3. #id로 지정한 속성
+ 4. 클래스, 가상클래스로 지정한 속성
 ```
 
 ### CSS -wepkit
 ```
-   - webkit이란?
-      * 웹 브라우저를 만드는 데 기반을 제공하는 오픈 소스 응용 프로그램 프레임워크 -wepkit-이라는 
-        prefix는 표준화가 되지 않은 새로운 기능들의 속성일 경우 -wepkit- 이라는 prefix를 
-        이용해서 사용
-
-        * -webkit- : 구글, 사파리 브라우저에 적용
-        * -moz- : 파이어폭스 브라우저에 적요
-        * -ms- : 익스플로러에 적용
-        * -o- : 오페라 브라우저에 적용
+ - webkit이란?
+   * 웹 브라우저를 만드는 데 기반을 제공하는 오픈 소스 응용 프로그램 프레임워크 -wepkit-이라는 
+     prefix는 표준화가 되지 않은 새로운 기능들의 속성일 경우 -wepkit- 이라는 prefix를 
+     이용해서    
+   * -webkit- : 구글, 사파리 브라우저에 적용
+   * -moz- : 파이어폭스 브라우저에 적요
+   * -ms- : 익스플로러에 적용
+   * -o- : 오페라 브라우저에 적용
 ```
 
 ### CSS Grid
 ```
-   - grid : Flexible Box는 단순한 1차원 레이아웃을 제공 (행, 열 하나씩)이에 비해 CSS Grid
+ - grid : Flexible Box는 단순한 1차원 레이아웃을 제공 (행, 열 하나씩)이에 비해 CSS Grid
           는 2차원의 레이아웃 시스템을 제공
-   
-   - grid 속성 종류
-      * gap
-      * grid-template-columns
-      * grid-template-rows
-      * repeat
-      * 1fr
-      * grid-column-start
-      * grid-column-end
-      * grid-row-start
-      * grid-row-end
-      * grid-template-areas : 그리드 레이아웃 내의 영역을 지정
+ 
+ - grid 속성 종류
+   * gap
+   * grid-template-columns
+   * grid-template-rows
+   * repeat
+   * 1fr
+   * grid-column-start
+   * grid-column-end
+   * grid-row-start
+   * grid-row-end
+   * grid-template-areas : 그리드 레이아웃 내의 영역을 지정
+```
+
+### CSS ViewPort
+```
+ - width=deivce-width는 스크린의 width를 device의 width와 같게 설정
+ - initial-scale=1.0 부분을 2.0으로 설정하면 화면 줌이 됨
+```
+
+### CSS Meta, Container Query
+```
+ - meta query는 일반적으로 viewport의 너비를 기준으로 적용
+ - container query는 viewport대신 영역을 감싼 container를 기준으로 적용
 ```
