@@ -10,5 +10,7 @@
     -   [NETWORK 기본](/network/network.md)
 -   algorithm
     -   [알고리즘 기본](/algorithm/algorithm.md)
+-   data structure
+    -   [자료구조](/data%20structure/data%20structure.md)
 -   etc
     -   [etc](/etc./etc.md)

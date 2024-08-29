@@ -1,3 +1,254 @@
+### 알고리즘이란?
+```
+ - 문제를 해결하기 위한 일련의 절차를 공식화한 형태로 표현한 것
+```
+
+### 좋은 알고리즘을 만들기 위한 조건
+```
+ - 입력 : 외부에서 제공되는 자료가 0개 이상 존재한다
+ - 출력 : 적어도 2개 이상의 서로 다른 결과를 내어야 한다. 즉 모든 입력에 하나의
+         출력이 나오면 안된다
+ - 명확성 : 수행 과정은 명확하고 모호하지 않은 명령어로 구성되어야 한다
+ - 유한성 : 유한 번의 명령어를 수행 후 유한 시간 내에 종료한다
+ - 효율성 : 모든 과정은 명백하게 실행 가능한 것이어야 한다
+```
+
+## 알고리즘의 종류
+### 1. 검색 알고리즘
+1-1. 선형 검색(Linear Search) : O(n)
+* 배열을 검색하여 원하는 key 값을 찾는 알고리즘
+* 배열의 맨 앞부터 순차적으로 훑어가며 검색
+```javascript
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i;  // 타겟 값을 찾으면 해당 인덱스를 반환
+        }
+    }
+    return -1;  // 타겟 값을 찾지 못하면 -1을 반환
+}
+
+// 예제 배열과 타겟 값
+const arr = [5, 3, 8, 4, 2];
+const target = 4;
+
+const result = linearSearch(arr, target);
+
+if (result !== -1) {
+    console.log(`타겟 값 ${target}은(는) 인덱스 ${result}에 있습니다.`);
+} else {
+    console.log(`타겟 값 ${target}을(를) 찾을 수 없습니다.`);
+}
+```
+1-2. 이진 검색(Binary Search) : O(logn)
+* 정렬된 배열에서 원하는 Key값을 찾는 알고리즘
+* 선형검색보다 빠름
+```javascript
+function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+
+    return -1;
+}
+
+const arr = [1, 2, 3, 4, 5];
+console.log(binarySearch(arr, 4));  // 출력: 3
+```
+
+### 2. 재귀 알고리즘
+2-1. 피보나치 수열 : O(2^n)
+* 피보나치 수열은 0,1,1,2,3,5,8,13,21,34,55..... 무한대로 이어지는 수열
+* 처음 시작하는 두 개의 값은 0과 1로 주어짐
+* 다음 값은 앞으 두 개의 값을 더한 값
+* 재귀호출구조는 거듭되는 연산이 많아서 복잡 
+```javascript
+function fibonacci(n) {
+    return n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(6));  // 출력: 8
+```
+2-2. 최대공약수(GCD) : O(log(n+m))
+* 유클리드 알고리즘을 재귀호출 방법으로 사용
+* a>=b라면 GCD(a,b) = GCD(b,r)이다. r=a%b
+* b가 0이 될 때까지 재귀호출 반복, b가 0이 되면 a가 최대공약수
+```javascript
+function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+}
+
+console.log(gcd(48, 18));  // 출력: 6
+```
+2-3 하노이의 탑
+* 마찬가지로 재귀호출 방법 사용
+* 원반 n-1개를 보조 기둥(aux)으로 옮기고, n번째 원반을 목표 기둥(to)으로 이동시킨 후, 
+  다시 n-1개의 원반을 목표 기둥으로 옮김
+* hanoi(3, 'A', 'C', 'B')는 세 개의 원반을 A 기둥에서 C 기둥으로 옮기는 순서를 출력
+```javascript
+function hanoi(n, from, to, aux) {
+    if (n === 0) return;
+    hanoi(n - 1, from, aux, to);
+    console.log(`Move disk ${n} from ${from} to ${to}`);
+    hanoi(n - 1, aux, to, from);
+}
+
+hanoi(3, 'A', 'C', 'B');
+```
+
+### 3. 정렬 알고리즘
+3-1. 선택정렬(Selection Sort) : O(n^2)
+* 리스트안에 있는 자료들을 (소 -> 대) 순서로 나열
+* 가장 단순한 정렬이지만, 많이 비교하므로 복잡도가 높음
+* 첫 번쨰 값을 가져올 때 n-1회 비교하여 최솟값을 결과 리스트에 가져옴
+* 첫 번쨰 값을 가져올 때 n-2회 비교하여 최솟값을 결과 리스트에 가져옴
+* 계속 반복하여 전체 비교횟수는 n(n-1)/2
+```javascript
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) minIndex = j;
+        }
+        if (minIndex !== i) {
+            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+        }
+    }
+    return arr;
+}
+
+const arr = [64, 25, 12, 22, 11];
+console.log(selectionSort(arr));  // 출력: [11, 12, 22, 25, 64]
+```
+3-2. 삽입정렬(Insertion Sort) : O(n^2)
+* 입력 리스트가 이미 정렬에 가까운 상태라면 복잡도는 O(n)으로 낮아짐
+* 일반적으로 선택정렬과 유사한 성능
+* 자료가 담긴 리스트에서 순차적으로 값을 가져옴 
+* 첫번째값은 그대로 가져오고 두 번째 값을 가져와 결과리스트와 비교 후 위치를 정함
+```javascript
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+
+const arr = [5, 2, 9, 1, 5, 6];
+console.log(insertionSort(arr));  // 출력: [1, 2, 5, 5, 6, 9]
+```
+3-3. 병합정렬(Mergy Sort) : O(logn)
+* 재귀호출 사용
+* 분할정복 방법의 알고리즘
+* 자료가 담긴 리스트 가운데 기준으로 2개로 나눈 후 각 리스트에 첫 값을 비교 후
+  작은 값을 골라 결과 리스트로 옮기는 방식
+
+```javascript
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+
+    return merge(left, right);
+}
+
+function merge(left, right) {
+    const result = [];
+    let i = 0, j = 0;
+
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+
+    return result.concat(left.slice(i)).concat(right.slice(j));
+}
+
+const arr = [38, 27, 43, 3, 9, 82, 10];
+console.log(mergeSort(arr));  // 출력: [3, 9, 10, 27, 38, 43, 82]
+```
+3-4 퀵 정렬(Quick Sort) : O(logn)
+* 재귀호출 사용
+* 분할정복 방법의 알고리즘
+* 병합정렬과는 다르게 특정 값을 피봇으로 정해서 입력리스트를 나눔
+* 피봇보다 작은값은 리스트a, 큰값은 리스트b로 저장
+* 두 개의 a,b리스트에 재귀호출을 적용해서 정렬된 리스트로 만듬(Like 샌드위치)
+```javascript
+function quickSort(arr) {
+    if (arr.length <= 1) return arr;
+
+    const pivot = arr[arr.length - 1];
+    const left = [];
+    const right = [];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < pivot) left.push(arr[i]);
+        else right.push(arr[i]);
+    }
+
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+const arr = [3, 6, 8, 10, 1, 2, 1];
+console.log(quickSort(arr));  // 출력: [1, 1, 2, 3, 6, 8, 10]
+```
+3-5 버블 정렬(Bubble Sort) : O(n^2)
+* 리스트를 훑어가며 인접한 값 2개씩 비교해서 정렬
+* 더 이상 위치 변경이 필요 없을 때까지 반복
+* 개인적으로 가장 좋아함
+```javascript
+function bubbleSort(arr) {
+    let n = arr.length;
+    let swapped;
+
+    do {
+        swapped = false;
+        for (let i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                swapped = true;
+            }
+        }
+        n--;  // 매번 가장 큰 값이 정렬되므로, 비교 범위를 줄입니다.
+    } while (swapped);
+
+    return arr;
+}
+
+const arr = [5, 1, 4, 2, 8];
+console.log(bubbleSort(arr));  // 출력: [1, 2, 4, 5, 8]
+```
+etc.  이외에도 힙 정렬, 셀 정렬이 있음
+
+| 알고리즘 | 시간 복잡도 (최악) | 시간 복잡도 (평균) | 시간 복잡도 (최선) | 
+|--------|----------------|----------------|----------------|
+| **선택 정렬** | O(n²)| O(n²) | O(n²) |
+| **삽입 정렬** | O(n²) | O(n²) | O(n) |
+| **버블 정렬** | O(n²) | O(n²) | O(n) | 
+| **병합 정렬** | O(n log n) | O(n log n) | O(n log n) |
+| **퀵 정렬**  | O(n²) | O(n log n) | O(n log n) | 
+
+---
+
 ### 시간 복잡도(Time Complexity)
 ```
 - 시간 복잡도는 알고리즘이 입력 크기에 따라 실행되는 시간의 증가를 설명하는 개념
@@ -38,4 +289,5 @@
     * 예시 : 외판원 문제(Traveling Salesman Problem)에서 가능한 모든 경로를 탐색하는 경우,
             모든 가능한 순열을 생성하는 경우
 ```
+![시간복잡도 그래프](/img/time%20complexity.png)
 
