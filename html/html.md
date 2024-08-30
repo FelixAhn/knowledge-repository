@@ -1,10 +1,10 @@
-### HTML ? 
+## HTML ? 
 ```
 Htper Text Markup Language
 - 웹 페이지 표시를 위해 콘테치를 삽일할 수 있게 해주는 요소들로 구성된 간단한 언어
 ```
 
-### HTML 구성요소
+## HTML 구성요소
 ```
 * 태그
  - 웹 문서를 구성하는 명령어
@@ -15,7 +15,7 @@ Htper Text Markup Language
  - 인라인 요소 : a, span strong
 ```
 
-### HTML 시맨틱 요소
+## HTML 시맨틱 요소
 ```
 의마가 있는 요소, 브라우저와 개발자 모두에게 의미를 명확하게 설명
 
@@ -35,7 +35,7 @@ Htper Text Markup Language
  - address
 ```
 
-### HTML 기본 구조
+## HTML 기본 구조
 ```
  - DOCTPYE : 문서 버전
  - HTML : html로 작성됐음을 브라우저에게 알림
@@ -43,7 +43,7 @@ Htper Text Markup Language
  - Body : 화면에 보이는 것들이 들어감, Only One
 ```
 
-### HTML 기본 태그와 역할
+## HTML 기본 태그와 역할
 ```
  - Heading : 제목 사용
  - p : 문단 정의

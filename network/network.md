@@ -1,4 +1,4 @@
-### HTTP
+## HTTP
 ```
 - HTTP 프로토콜 : HTTP(Hypertext Transfer Protocol)는 웹에서 클라이언트와 서버 간의 
                 데이터를 주고받는 프로토콜
@@ -20,14 +20,14 @@
                                       트, 경로, 쿼리 스트링 등으로 구성
 ```
 
-### HTTP와 HTTTPS의 차이
+## HTTP와 HTTTPS의 차이
 ```
 HTTP는 웹 상에서 데이터를 주고받을 때 사용되는 프로토콜로, 데이터 전송 시 암호화 x. 반면에 HTTPS
 는 HTTP의 보안 버전으로, 데이터를 암호화하여 안전하게 전송. HTTPS는 SSL 또는 TLS 프로토콜을 사용
 하여 암호화된 연결을 설정하고, 인증서를 통해 서버의 신원을 확인.
 ```
 
-### SSL
+## SSL
 ```
 SSL(Secure Sockets Layer)? 
 * SSL은 데이터를 암호화하여 제3자가 데이터를 도청하거나 변조할 수 없도록 보호 
@@ -35,7 +35,7 @@ SSL(Secure Sockets Layer)?
 * 현재는 SSL 3.0이 마지막 버전이며, 그 이후로는 TLS로 대체
 ```
 
-### TLS
+## TLS
 ```
 TLS(Transport Layer Security)?
 * SSL의 보안 취약점을 개선하고 더 강력한 암호화 기술을 제공
@@ -44,7 +44,7 @@ TLS(Transport Layer Security)?
 * 최신 버전은 TLS 1.3, 이전 버전(TLS 1.0, 1.1)은 보안 취약점이 있어 더 이상 사용 x
 ```
 
-### 웹 어플리케이션 동작 방식 예시
+## 웹 어플리케이션 동작 방식 예시
 ```
 1. 사용자 요청 (프론트엔드[클라이언트] 측)
   - 사용자가 블로그 페이지에 접속하고, "새 게시물 작성" 버튼을 클릭
