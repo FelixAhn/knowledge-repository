@@ -329,3 +329,33 @@ function ex(n){
           간, 순환 프로그램일 경우 순환 스택 등
 ```
 
+### 공간 복잡도 계산 방법
+* 상수 공간 복잡도 : O(1)
+```javascript
+function ex1(n){
+    let a = 0;  // 상수 공간
+    let b = 1;  // 상수 공간
+    return a+b; 
+}
+```
+* 선형 공간 복잡도 : O(n)
+```javascript
+function ex2(n){
+    let arr = new Array(n); // 배열 생성 : O(n)
+    for(let i = 0; i < n; i++){
+        arr[i] = i;         // 배열 요소 설정 : O(n)
+    }
+    return array;
+}
+```
+* 이차원 공간 복잡도 : O(n^2)
+```javascript
+function ex3(n){
+    let mat = new Array(n);     // 1차원 배열 생성 : O(n)
+    for(let i = 0; i < n; i++){
+        mat[i] = new Array(n);  // 2차원 배열 생성 : O(n^2)
+    }
+    return mat;
+}
+```
+
