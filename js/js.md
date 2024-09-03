@@ -455,3 +455,26 @@ btn.onClick = function() {
 ```
 ![CRP](/img/CRP.png)
 
+* CSS 객체 모델 (CSSOM)
+```
+- CSS 객체 모델은 javascript에서 css를 조작할 수 있는 API집합
+- HTML 대신 CSS가 대상인 DOM이라고 생각할 수 있으며, 사용자가 CSS 스타일을 동적으로 
+  읽고 수정할 수 있는 방법
+```
+
+## innerHTML, innerText, textContext의 차이 (알아두면 좋은 지식)
+```javascript
+const e = document.getElementById('e');
+
+console.log(e.innerHTML)
+console.log(e.innerText)
+console.log(e.textContext)
+```
+```
+- innerHTML : html까지 같이 보여줌
+- innerText : 사용자에게 보여지는 텍스트 값을 읽어오며 여러 공백을 무시하고 하나의 공백
+              만 처리
+- textContext : display:none 스타일이 적용된 숨겨진 텍스트도 가져옴
+                노드가 가지고 있는 텍스트 값 그대로를 보여줌
+```
+
