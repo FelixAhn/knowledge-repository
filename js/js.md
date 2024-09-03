@@ -334,3 +334,12 @@ loactions.map(function(loaction) {
 // 경기도
 // 대구
 ```
+
+* for와 for each의 차이점
+```
+- for 루프는 원래 사용되었던 접근 방식이지만 forEach는 배열 요소를 반복하는 새로운 접근 방식
+- for 루프는 필요한 경우 break문을 사용하여 for루프를 중단할 수 있지만 for each에서는 이
+  와 같은 작업 불가능
+- for 루프는 await와 함께 작동하지만 for each는 await와 완벽하게 동작 x
+- for 루프를 사용한 성능이 for each 루프보다 좋음
+```
