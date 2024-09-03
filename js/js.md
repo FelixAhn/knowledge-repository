@@ -343,3 +343,115 @@ loactions.map(function(loaction) {
 - for 루프는 await와 함께 작동하지만 for each는 await와 완벽하게 동작 x
 - for 루프를 사용한 성능이 for each 루프보다 좋음
 ```
+
+## Window 객체
+```
+- window 객체는 브라우저에 의해 자동으로 생성되며 웹 브라워저의 창을 나타낸다
+- * window은 브라우저 객체이지 javascript의 객체가 아니다!
+- 브라우저의 창에 대한 정보를 알 수 있고, 이 창을 제어할 수 있다
+- var 키워드로 변수를 선언하거나 함수를 선언하면 window 객체의 프로퍼티가 된다
+```
+* 사용 예시
+```javascript
+// Alert
+alert("hello world!");
+
+// Prompt
+const input = prompt();
+alert(input);
+
+// Confirm
+if(confirm("yes or no")){
+  console.log('yes')
+}
+else{
+  console.log('no')
+}
+
+let val;
+
+// Outter heigth and width
+val = window.outerHeight
+val = window.outerWidth
+
+// Inner heigth and width
+val = window.innerHeight
+val = window.innerWidth
+
+// Scroll points
+val = window.scrollY
+val = window.scrollX
+
+// Location Object
+val = window.loaction
+val = window.loaction.hostname
+val = window.loaction.port
+val = window.loaction.href
+val = window.loaction.search
+
+// Redirect
+window.loaction.href = "http://naver.com"
+// Reload
+window.loaction.reload()
+
+// Histroy Objecgt
+window.history.go(-2)
+val = window.histroy.length
+
+// Navigator Object
+val = window.navigator
+val = window.navigator.userAgent
+val = window.navigator.Language
+
+// Browser Object Model (BOM)
+window.loaction
+window.navigator
+window.history
+window.screen
+
+// Document Object Model (DOM)
+window.documnet
+```
+* var로 선언해서 window 객체의 프로퍼티 만들기
+```javascript
+// let과 const는 블록 스코프이기에
+// window 객체 내부의 블록에서 선언된 것으로 전역 객체 프로퍼티로 활용x
+var greeting = "hello"
+
+function doGreeting() {
+  return greeting
+}
+
+console.log(window.greeting)      // hello
+console.log(window.doGreeting())  // hello
+```
+
+## DOM(Document Obejct Model)
+```
+- DOM은 메모리에 웹 페이지 문서 구조를 트리구조로 표현해서 웹 브라우저가 HTML 페이지를
+  인식하게 해줌
+- 웹페이지를 이루는 요소들을 자바스크립트가 이용할 수 있게끔 브라우저가 트리 구조로 만든
+  객체 모델을 의미
+```
+![domtree](/img/dom.png)
+
+* DOM조작 예시
+```html
+<button class="btn">Click</button>
+```
+```javascript
+var btn = document.querySelector(".button")
+
+btn.onClick = function() {
+  this.style.backgroundColor = "red"
+}
+```
+
+* 웹 페이지 빌드 과정(Critical Rendering Path CRP)
+```
+- 브라우저가 서버에서 페이지에 대한 HTML응답을 받고 화면에 표시하기 전에 여러
+  단계가 존재
+- 웹 브라우저가 HTML 문서를 읽고, 스타일을 입히고 viewport에 표시하는 과정
+```
+![CRP](/img/CRP.png)
+
