@@ -6,6 +6,8 @@
     -   [HTML 기본](/html/html.md)
 -   CSS
     -   [CSS 기본](/css/css.md)
+-   Javascript
+    -   [JS 기본](/js/js.md)
 -   Network
     -   [Network 기본](/network/network.md)
 -   Algorithm
